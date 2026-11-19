@@ -28,6 +28,10 @@ jobs:
 
       - name: Build
         run: cargo build --verbose
+        env:
+          RUSTC_WRAPPER: sccache
 
       - name: Test
         run: cargo test --workspace --verbose
+        env:
+          RUSTC_WRAPPER: sccache
