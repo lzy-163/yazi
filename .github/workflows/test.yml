@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  SCCACHE_GHA_ENABLED: true
+  SCCACHE_GHA_ENABLED: "true"
   RUSTC_WRAPPER: sccache
   CARGO_TERM_COLOR: always
 
@@ -24,7 +24,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal
 
       - name: Setup sccache
-        uses: mozilla-actions/sccache-action@v0.0.6
+        uses: mozilla-actions/sccache-action@v0.0.9
 
       - name: Build
         run: cargo build --verbose
